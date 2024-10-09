@@ -1,4 +1,6 @@
 ## 0.2.2
+- update library exploded
+## 0.2.2
 - fixed broken vimeo api requests
 - upgraded minimum sdk version from ">=2.17.0 <4.0.0" to ">=3.0.0 <4.0.0"
 - upgraded all the dependencies to latest version

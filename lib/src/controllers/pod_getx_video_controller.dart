@@ -51,7 +51,7 @@ class PodGetXVideoController extends _PodGesturesController {
   }
 
   ///*init
-  Future<void> videoInit() async {
+  Future<void>  videoInit() async {
     ///
     // checkPlayerType();
     podLog(_videoPlayerType.toString());
@@ -93,7 +93,7 @@ class PodGetXVideoController extends _PodGesturesController {
           httpHeaders: playVideoFrom.httpHeaders,
         );
         playingVideoUrl = playVideoFrom.dataSource;
-        break;
+        //break;
       case PodVideoPlayerType.networkQualityUrls:
         final url = await getUrlFromVideoQualityUrls(
           qualityList: podPlayerConfig.videoQualityPriority,
@@ -110,7 +110,7 @@ class PodGetXVideoController extends _PodGesturesController {
         );
         playingVideoUrl = url;
 
-        break;
+        //break;
       case PodVideoPlayerType.youtube:
         final urls = await getVideoQualityUrlsFromYoutube(
           playVideoFrom.dataSource!,
