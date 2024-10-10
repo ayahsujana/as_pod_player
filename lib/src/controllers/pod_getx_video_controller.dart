@@ -93,7 +93,7 @@ class PodGetXVideoController extends _PodGesturesController {
           httpHeaders: playVideoFrom.httpHeaders,
         );
         playingVideoUrl = playVideoFrom.dataSource;
-        //break;
+        break;
       case PodVideoPlayerType.networkQualityUrls:
         final url = await getUrlFromVideoQualityUrls(
           qualityList: podPlayerConfig.videoQualityPriority,
@@ -110,16 +110,20 @@ class PodGetXVideoController extends _PodGesturesController {
         );
         playingVideoUrl = url;
 
-        //break;
+        break;
       case PodVideoPlayerType.youtube:
+      print('AYAH SUJANA dataSource ==> ${playVideoFrom.dataSource}');
+      print('AYAH SUJANA live ==> ${playVideoFrom.live}');
         final urls = await getVideoQualityUrlsFromYoutube(
           playVideoFrom.dataSource!,
           playVideoFrom.live,
         );
+        print('AYAH SUJANA URLS ==	$urls');
         final url = await getUrlFromVideoQualityUrls(
           qualityList: podPlayerConfig.videoQualityPriority,
           videoUrls: urls,
         );
+
 
         ///
         _videoCtr = VideoPlayerController.networkUrl(

@@ -108,6 +108,7 @@ class _PodVideoQualityController extends _PodVideoController {
     String youtubeIdOrUrl,
     bool live,
   ) async {
+    print('AYAH SUJANA youtubeIdOrUrl ===>> $youtubeIdOrUrl');
     return await VideoApis.getYoutubeVideoQualityUrls(youtubeIdOrUrl, live) ??
         [];
   }

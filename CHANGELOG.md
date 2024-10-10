@@ -1,4 +1,4 @@
-## 0.2.2
+## 0.2.3
 - update library exploded
 ## 0.2.2
 - fixed broken vimeo api requests
