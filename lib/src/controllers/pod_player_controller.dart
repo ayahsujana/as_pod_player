@@ -43,13 +43,11 @@ class PodPlayerController {
   /// If the provided video cannot be loaded, an exception could be thrown.
   Future<void> initialise() async {
     if (!_isCtrInitialised) {
-      
       _init();
     }
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       try {
         if (!_isCtrInitialised) {
-          
           await _ctr.videoInit();
           podLog('$getTag Pod player Initialized');
         } else {
@@ -255,7 +253,6 @@ class PodPlayerController {
     String youtubeIdOrUrl, {
     bool live = false,
   }) {
-    print("AYAH SUJANA - $youtubeIdOrUrl");
     return VideoApis.getYoutubeVideoQualityUrls(youtubeIdOrUrl, live);
   }
 

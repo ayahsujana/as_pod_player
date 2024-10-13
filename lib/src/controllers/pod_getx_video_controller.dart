@@ -51,7 +51,7 @@ class PodGetXVideoController extends _PodGesturesController {
   }
 
   ///*init
-  Future<void>  videoInit() async {
+  Future<void> videoInit() async {
     ///
     // checkPlayerType();
     podLog(_videoPlayerType.toString());
@@ -112,18 +112,14 @@ class PodGetXVideoController extends _PodGesturesController {
 
         break;
       case PodVideoPlayerType.youtube:
-      print('AYAH SUJANA dataSource ==> ${playVideoFrom.dataSource}');
-      print('AYAH SUJANA live ==> ${playVideoFrom.live}');
         final urls = await getVideoQualityUrlsFromYoutube(
           playVideoFrom.dataSource!,
           playVideoFrom.live,
         );
-        print('AYAH SUJANA URLS ==	$urls');
         final url = await getUrlFromVideoQualityUrls(
           qualityList: podPlayerConfig.videoQualityPriority,
           videoUrls: urls,
         );
-
 
         ///
         _videoCtr = VideoPlayerController.networkUrl(

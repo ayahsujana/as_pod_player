@@ -124,7 +124,6 @@ class VideoApis {
     String youtubeIdOrUrl,
     bool live,
   ) async {
-    print('AYAH SUJANA getYoutubeVideoQualityUrls ===>> $youtubeIdOrUrl');
     try {
       final yt = YoutubeExplode();
       final urls = <VideoQalityUrls>[];
@@ -139,27 +138,16 @@ class VideoApis {
           ),
         );
       } else {
-        final manifest = await yt.videos.streamsClient.getManifest(youtubeIdOrUrl, fullManifest: true);
-        // print('AYAH SUJANA manifest ==>> ${videooo.title}');
-        // if (manifest.videoOnly.isNotEmpty) {
-        //   for (var element in manifest.videoOnly) {
-        //     urls.add(
-        //       VideoQalityUrls(
-        //         quality: int.parse(element.videoQualityLabel.split('p').first),
-        //         url: element.url.toString(),
-        //       ),
-        //     );
-        //   }
-        // }
+        final manifest =
+            await yt.videos.streamsClient.getManifest(youtubeIdOrUrl);
         urls.addAll(
           manifest.muxed.map(
             (element) => VideoQalityUrls(
-              quality: int.parse(element.qualityLabel.split('p').first),
+              quality: int.parse(element.qualityLabel.split('p')[0]),
               url: element.url.toString(),
             ),
           ),
         );
-        print('AYAH SUJANA URLS ==	$urls');
       }
       // Close the YoutubeExplode's http client.
       yt.close();
