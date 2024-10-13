@@ -1,3 +1,5 @@
+## 0.2.7
+- update library exploded
 ## 0.2.5
 - update library exploded
 ## 0.2.3
