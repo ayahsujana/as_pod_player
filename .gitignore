@@ -8,6 +8,7 @@
 .buildlog/
 .history
 .svn/
+migrate_working_dir/
 
 # IntelliJ related
 *.iml
@@ -45,6 +46,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-pubspec.lock
-.metadata
+/pubspec.lock
+**/doc/api/
+build/
+.fvm/
 example/assets/long_video.mkv
