@@ -14,6 +14,10 @@ dependencies:
 
   pod_player:
     path: ../
+  # pod_player: 
+  #   git:
+  #     url: https://github.com/ayahsujana/as_pod_player.git
+  #     ref: main
 
   cupertino_icons: ^1.0.5
   visibility_detector: ^0.3.3

@@ -5,20 +5,17 @@ class PlayVideoFromYoutube extends StatefulWidget {
   const PlayVideoFromYoutube({Key? key}) : super(key: key);
 
   @override
-  State<PlayVideoFromYoutube> createState() => _PlayVideoFromVimeoIdState();
+  State<PlayVideoFromYoutube> createState() => _PlayVideoFromYoutubeState();
 }
 
-class _PlayVideoFromVimeoIdState extends State<PlayVideoFromYoutube> {
+class _PlayVideoFromYoutubeState extends State<PlayVideoFromYoutube> {
   late final PodPlayerController controller;
   final videoTextFieldCtr = TextEditingController();
   @override
   void initState() {
     controller = PodPlayerController(
-      playVideoFrom: PlayVideoFrom.youtube('https://youtu.be/A3ltMaM6noM'),
-      podPlayerConfig: const PodPlayerConfig(
-        videoQualityPriority: [720, 360],
-        autoPlay: false,
-      ),
+      playVideoFrom:
+          PlayVideoFrom.youtube('https://www.youtube.com/watch?v=A3ltMaM6noM'),
     )..initialise();
     super.initState();
   }
